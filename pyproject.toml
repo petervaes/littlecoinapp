@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "littlecoinapp"
+version = "0.1.0"
+description = "Identify coins from photos and value them against a local JSON catalog."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "openai>=1.68,<3",
+    "pydantic>=2,<3",
+    "python-dotenv>=1,<2",
+]
+
+[project.scripts]
+littlecoin = "littlecoinapp.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
